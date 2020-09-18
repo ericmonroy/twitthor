@@ -1,5 +1,5 @@
 var url = window.location.href;
-var swLocation = '/twitthor/sw.js';
+var swLocation = url + 'sw.js';
 console.log(url);
 
 if (navigator.serviceWorker) {
@@ -11,7 +11,6 @@ if (navigator.serviceWorker) {
 
 }
 console.log(swLocation);
-
 
 
 // Referencias de jQuery
