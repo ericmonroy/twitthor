@@ -1,14 +1,12 @@
-
-//impprts
+console.log("SW INFO:  Init SW");
 
 importScripts('js/sw-utils.js');
 
-const STATIC_CACHE = 'static-v2';
+const STATIC_CACHE = 'static-v3';
 const DYNAMIC_CACHE = 'dynamic-v1';
 const INMUTABLE_CACHE = 'inmutable-v1';
 
 const APP_SHELL = [
-    /* '/', */
     'index.html',
     'css/style.css',
     'img/favicon.ico',
@@ -34,6 +32,7 @@ const APP_SHELL_INMUTABLE = [
 
 
 self.addEventListener('install', e => {
+    console.log("SW INFO:  Install");
     const cacheStatic = caches.open(STATIC_CACHE).then(cache =>
         cache.addAll(APP_SHELL));
 
@@ -44,6 +43,7 @@ self.addEventListener('install', e => {
 
 
 self.addEventListener('activate', e => {
+    console.log("SW INFO:  Activation");
     const deleteCacheVersion = caches.keys().then(keys => {
         keys.forEach(key => {
             if (key !== STATIC_CACHE && key.includes('static')) {

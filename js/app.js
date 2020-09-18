@@ -5,12 +5,15 @@ console.log(url);
 if (navigator.serviceWorker) {
     if (url.includes('localhost')) {
         swLocation = '/sw.js';
+        navigator.serviceWorker.register(swLocation);
+        console.log("DEV:", swLocation);
     } else {
         navigator.serviceWorker.register(swLocation);
+        console.log("PROD:", swLocation);
     }
 
 }
-console.log(swLocation);
+
 
 
 // Referencias de jQuery

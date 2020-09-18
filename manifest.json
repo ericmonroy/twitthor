@@ -1,6 +1,6 @@
 {
-    "short_name": "Twittor",
-    "name": "Twiittor Heroes Game",
+    "short_name": "Twitthor",
+    "name": "Twitthor Heroes Game",
     "start_url": "index.html",
     "background_color": "#3498DB",
     "display": "standalone",
